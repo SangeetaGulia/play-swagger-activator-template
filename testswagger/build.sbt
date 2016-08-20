@@ -6,11 +6,13 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.11.7"
 
+resolvers += Resolver.jcenterRepo
+
 libraryDependencies ++= Seq(
   jdbc,
   cache,
   ws,
   "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % Test,
-  "com.iheart" %% "play-swagger" % "0.2.1-PLAY2.5",
+  "com.iheart" %% "play-swagger" % "0.4.0",
   "org.webjars" % "swagger-ui" % "2.1.4"
 )
