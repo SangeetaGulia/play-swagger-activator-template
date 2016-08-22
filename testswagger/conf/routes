@@ -14,7 +14,7 @@
 #	}
 #}
 ###
-GET     /                           controllers.HomeController.index
+GET     /abc                           controllers.HomeController.index
 
 ###
 # summary: swagger definition

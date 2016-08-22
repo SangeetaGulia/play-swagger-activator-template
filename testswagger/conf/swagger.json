@@ -16,13 +16,12 @@
     }
   },
   "host": "localhost:9000",
-  "basePath": "/docs",
   "schemes": [
-    "https",
     "http"
   ],
   "consumes": [
-    "application/json"
+    "application/json",
+    "application/text"
   ],
   "produces": [
     "application/json"
