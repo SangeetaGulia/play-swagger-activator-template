@@ -17,9 +17,6 @@ class ApiSpecs @Inject() extends Controller {
   private lazy val generator = SwaggerSpecGenerator(domainPackage)
 
   def specs = Action.async { _ =>
-
-    println(":::::::::::::::" + generator.generate())
-
       Future.fromTry(generator.generate()).map(Ok(_)) //generate() can also taking in an optional arg of the route file name.
     }
 

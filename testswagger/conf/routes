@@ -16,11 +16,60 @@
 ###
 GET     /abc                           controllers.HomeController.index
 
-###
-# summary: swagger definition
-# description: for swagger UI to consume
-###
+### NoDocs ###
 GET   /docs/swagger.json          controllers.ApiSpecs.specs
 
 ### NoDocs ###
 GET   /docs/swagger-ui/*file        controllers.Assets.versioned(path:String="/public/lib/swagger-ui", file:String)
+
+###
+# {
+#    "tags" : ["BodyData"],
+#    "summary" : "mirror response",
+#    "consumes" : [ "application/x-www-form-urlencoded" ],
+#    "parameters" : [
+#    {
+#       "in" : "formData",
+#       "name":"name",
+#       "description": "Employee Name",
+#       "required":true,
+#       "type":"string"
+#    },
+#    {
+#       "in" : "formData",
+#       "name":"id",
+#       "description": "Employee Id",
+#       "required":true,
+#       "type":"integer",
+#       "format":"int64"
+#    },{
+#       "in" : "formData",
+#       "name":"position",
+#       "description": "Employee Position",
+#       "required":true,
+#       "type":"string"
+#    }
+#   ],
+#    "responses": {
+#        "200": {
+#            "description": "success",
+#            "schema": {
+#                "$ref": "#/definitions/models.RequestWithBody"
+#            }
+#        },
+#		"400": {
+#			"description": "Problem in parsing input json data",
+#			"schema": {
+#				"$ref": "#/definitions/models.ErrorResponse"
+#			}
+#		},
+#       "default": {
+#            "description": "error",
+#            "schema": {
+#                "$ref": "#/definitions/models.ErrorResponse"
+#            }
+#        }
+#    }
+# }
+###
+POST  /mirror/body/data             controllers.SwaggerUiController.generateMirrorResponse

@@ -2,17 +2,11 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "Weather API",
-    "description": "A sample API that uses a Mashape weather API as an example to demonstrate features in the swagger-2.0 specification",
-    "termsOfService": "http://helloreverb.com/terms/",
+    "title": "Play Swagger Demo",
     "contact": {
-      "name": "Tom Johnson",
-      "email": "tomjohnson1492@gmail.com",
+      "name": "Sangeeta Gulia",
+      "email": "sangeeta.gulia411@gmail.com",
       "url": "localhost:9000"
-    },
-    "license": {
-      "name": "MIT",
-      "url": "http://opensource.org/licenses/MIT"
     }
   },
   "host": "localhost:9000",
