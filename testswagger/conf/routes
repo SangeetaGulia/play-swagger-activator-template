@@ -14,13 +14,13 @@
 #	}
 #}
 ###
-GET     /abc                           controllers.HomeController.index
+GET     /abc                            controllers.HomeController.index
 
 ### NoDocs ###
-GET   /docs/swagger.json          controllers.ApiSpecs.specs
+GET     /docs/swagger.json              controllers.ApiSpecs.specs
 
 ### NoDocs ###
-GET   /docs/swagger-ui/*file        controllers.Assets.versioned(path:String="/public/lib/swagger-ui", file:String)
+GET     /docs/swagger-ui/*file          controllers.Assets.versioned(path:String="/public/lib/swagger-ui", file:String)
 
 ###
 # {
@@ -73,3 +73,43 @@ GET   /docs/swagger-ui/*file        controllers.Assets.versioned(path:String="/p
 # }
 ###
 POST  /mirror/body/data             controllers.SwaggerUiController.generateMirrorResponse
+
+
+###
+# {
+#    "tags" : ["BodyData"],
+#    "summary" : "get student record",
+#    "consumes" : [ "application/x-www-form-urlencoded" ],
+#    "parameters" : [
+#    {
+#       "in" : "path",
+#       "name":"id",
+#       "description": "Student Id",
+#       "required":true,
+#       "type":"string"
+#    }
+#   ],
+#    "responses": {
+#        "200": {
+#            "description": "success",
+#            "schema": {
+#                "$ref": "#/definitions/models.StudentRecord"
+#            }
+#        },
+#		"400": {
+#			"description": "No record found for given id",
+#			"schema": {
+#				"$ref": "#/definitions/models.ErrorResponse"
+#			}
+#		},
+#       "default": {
+#            "description": "error",
+#            "schema": {
+#                "$ref": "#/definitions/models.ErrorResponse"
+#            }
+#        }
+#    }
+# }
+###
+GET   /student/record/:id           controllers.SwaggerUiController.getRecordById(id: Int)
+

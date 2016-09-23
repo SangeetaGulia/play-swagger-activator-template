@@ -8,6 +8,8 @@ scalaVersion := "2.11.7"
 
 resolvers += Resolver.jcenterRepo
 
+resolvers += "Sonatype snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/"
+
 libraryDependencies ++= Seq(
   jdbc,
   cache,
