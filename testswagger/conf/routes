@@ -77,9 +77,8 @@ POST  /mirror/body/data             controllers.SwaggerUiController.generateMirr
 
 ###
 # {
-#    "tags" : ["BodyData"],
-#    "summary" : "get student record",
-#    "consumes" : [ "application/x-www-form-urlencoded" ],
+#    "tags" : ["PathContainData"],
+#    "summary" : "get student record(path example)",
 #    "parameters" : [
 #    {
 #       "in" : "path",
@@ -93,7 +92,7 @@ POST  /mirror/body/data             controllers.SwaggerUiController.generateMirr
 #        "200": {
 #            "description": "success",
 #            "schema": {
-#                "$ref": "#/definitions/models.StudentRecord"
+#                "$ref": "#/definitions/models.StudentRecordResponse"
 #            }
 #        },
 #		"400": {
@@ -113,3 +112,39 @@ POST  /mirror/body/data             controllers.SwaggerUiController.generateMirr
 ###
 GET   /student/record/:id           controllers.SwaggerUiController.getRecordById(id: Int)
 
+###
+# {
+#    "tags" : ["QueryStringContainData"],
+#    "summary" : "get student record(query example)",
+#    "parameters" : [
+#    {
+#       "in" : "query",
+#       "name":"id",
+#       "description": "Student Id",
+#       "required":true,
+#       "type":"string"
+#    }
+#   ],
+#    "responses": {
+#        "200": {
+#            "description": "success",
+#            "schema": {
+#                "$ref": "#/definitions/models.StudentRecordResponse"
+#            }
+#        },
+#		"400": {
+#			"description": "No record found for given id",
+#			"schema": {
+#				"$ref": "#/definitions/models.ErrorResponse"
+#			}
+#		},
+#       "default": {
+#            "description": "error",
+#            "schema": {
+#                "$ref": "#/definitions/models.ErrorResponse"
+#            }
+#        }
+#    }
+# }
+###
+GET   /get/student/record/               controllers.SwaggerUiController.getStudentRecordById

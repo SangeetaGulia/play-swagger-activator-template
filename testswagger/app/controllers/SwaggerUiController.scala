@@ -43,6 +43,20 @@ class SwaggerUiController extends Controller {
     }
   }
 
+  def getStudentRecordById: Action[AnyContent] = Action.async { implicit request =>
+    val id: String = request.queryString.get("id").fold("")(id => id.head)
+    println("id is" + id)
+    Future {
+      val listOfIds = studentRecord.map { student => student.id }
+      if(listOfIds.contains(id)) {
+        Ok(Json.obj("data" -> (studentRecord.filter(_.id == id).head).toJson))
+      } else {
+        BadRequest(Json.obj("error" -> "No record found for given id."))
+      }
+    }
+  }
+
+
 
 }
 

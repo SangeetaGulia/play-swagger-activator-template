@@ -1,5 +1,7 @@
 package models
 
+case class RequestWithBodyResponse(data: RequestWithBody)
+
 case class RequestWithBody(name: String, id: String, position: String){
 
   def toJson: play.api.libs.json.JsValue = play.api.libs.json.Json.toJson(serialize)
