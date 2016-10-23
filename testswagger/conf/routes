@@ -17,10 +17,10 @@
 GET     /abc                            controllers.HomeController.index
 
 ### NoDocs ###
-GET     /docs/swagger.json              controllers.ApiSpecs.specs
+GET     /swagger.json              controllers.ApiSpecs.specs
 
 ### NoDocs ###
-GET     /docs/swagger-ui/*file          controllers.Assets.versioned(path:String="/public/lib/swagger-ui", file:String)
+GET     /docs/*file          controllers.Assets.versioned(path:String="/public/lib/swagger-ui", file:String)
 
 ###
 # {
@@ -147,4 +147,4 @@ GET   /student/record/:id           controllers.SwaggerUiController.getRecordByI
 #    }
 # }
 ###
-GET   /get/student/record/               controllers.SwaggerUiController.getStudentRecordById
+GET   /get/student/record               controllers.SwaggerUiController.getStudentRecordById
