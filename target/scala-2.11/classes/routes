@@ -1,0 +1,150 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+###
+#{
+#	"responses": {
+#		"200": {
+#			"description": "success",
+#			"schema": {
+#				"$ref": "#/definitions/models.HomeGateway"
+#			}
+#		}
+#	}
+#}
+###
+GET     /                        controllers.HomeController.index
+
+### NoDocs ###
+GET     /swagger.json              controllers.ApiSpecs.specs
+
+### NoDocs ###
+GET     /docs/*file          controllers.Assets.versioned(path:String="/public/lib/swagger-ui", file:String)
+
+###
+# {
+#    "tags" : ["BodyData"],
+#    "summary" : "mirror response",
+#    "consumes" : [ "application/x-www-form-urlencoded" ],
+#    "parameters" : [
+#    {
+#       "in" : "formData",
+#       "name":"name",
+#       "description": "Employee Name",
+#       "required":true,
+#       "type":"string"
+#    },
+#    {
+#       "in" : "formData",
+#       "name":"id",
+#       "description": "Employee Id",
+#       "required":true,
+#       "type":"integer",
+#       "format":"int64"
+#    },{
+#       "in" : "formData",
+#       "name":"position",
+#       "description": "Employee Position",
+#       "required":true,
+#       "type":"string"
+#    }
+#   ],
+#    "responses": {
+#        "200": {
+#            "description": "success",
+#            "schema": {
+#                "$ref": "#/definitions/models.RequestWithBody"
+#            }
+#        },
+#		"400": {
+#			"description": "Problem in parsing input json data",
+#			"schema": {
+#				"$ref": "#/definitions/models.ErrorResponse"
+#			}
+#		},
+#       "default": {
+#            "description": "error",
+#            "schema": {
+#                "$ref": "#/definitions/models.ErrorResponse"
+#            }
+#        }
+#    }
+# }
+###
+POST  /mirror/body/data             controllers.SwaggerUiController.generateMirrorResponse
+
+
+###
+# {
+#    "tags" : ["PathContainData"],
+#    "summary" : "get student record(path example)",
+#    "parameters" : [
+#    {
+#       "in" : "path",
+#       "name":"id",
+#       "description": "Student Id",
+#       "required":true,
+#       "type":"string"
+#    }
+#   ],
+#    "responses": {
+#        "200": {
+#            "description": "success",
+#            "schema": {
+#                "$ref": "#/definitions/models.StudentRecordResponse"
+#            }
+#        },
+#		"400": {
+#			"description": "No record found for given id",
+#			"schema": {
+#				"$ref": "#/definitions/models.ErrorResponse"
+#			}
+#		},
+#       "default": {
+#            "description": "error",
+#            "schema": {
+#                "$ref": "#/definitions/models.ErrorResponse"
+#            }
+#        }
+#    }
+# }
+###
+GET   /student/record/:id           controllers.SwaggerUiController.getRecordById(id: Int)
+
+###
+# {
+#    "tags" : ["QueryStringContainData"],
+#    "summary" : "get student record(query example)",
+#    "parameters" : [
+#    {
+#       "in" : "query",
+#       "name":"id",
+#       "description": "Student Id",
+#       "required":true,
+#       "type":"string"
+#    }
+#   ],
+#    "responses": {
+#        "200": {
+#            "description": "success",
+#            "schema": {
+#                "$ref": "#/definitions/models.StudentRecordResponse"
+#            }
+#        },
+#		"400": {
+#			"description": "No record found for given id",
+#			"schema": {
+#				"$ref": "#/definitions/models.ErrorResponse"
+#			}
+#		},
+#       "default": {
+#            "description": "error",
+#            "schema": {
+#                "$ref": "#/definitions/models.ErrorResponse"
+#            }
+#        }
+#    }
+# }
+###
+GET   /get/student/record               controllers.SwaggerUiController.getStudentRecordById

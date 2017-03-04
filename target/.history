@@ -1,0 +1,4 @@
+run
+clean compile
+;clean;compile
+;run
