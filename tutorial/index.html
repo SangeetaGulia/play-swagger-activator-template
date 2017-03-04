@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title> An Activator Template Introducing Play - Swagger </title>
+</head>
+
+<body>
+<div>
+    <h2>Swagger Integration with Play Framework</h2>
+
+    This is an activator template that is designed to see how swagger can be integrated with play-framework using
+    play-swagger. This template will include demonstration of the most common use-cases while using swagger with any API
+    which are as follows :<br/><br/>
+
+       1) Hiding an end point using swagger-ui.<br/>
+       2) Specify parameters in query-string<br/>
+       3) Specify parameters in path(url)<br/>
+       4) Specify parameters as FormUrlEncodedBody<br/><br/>
+
+    To get the conceptual knowledge on every use-case, or how routes of a play-framework application interacts to create
+    the swagger UI, you can read @ <a href="https://blog.knoldus.com/2016/11/03/introduction-to-swagger/">Introduction to play-swagger</a>
+</div>
+
+<div>
+    <h2>Clone Project</h2>
+    <pre><code>
+    git clone git@github.com:SangeetaGulia/play-swagger-activator-template.git
+    cd play-swagger-activator-template
+    activator clean compile
+    </code></pre>
+</div>
+<div>
+    <h2>Run Project</h2>
+
+    To run the project use the below command which will start your play application at port 9000.
+    <pre><code>
+    activator run
+    </code></pre>
+
+    <b>To Render swagger-ui for your API routes</b>
+    <pre><code>
+    http://localhost:9000/docs/index.html?url=/swagger.json#/
+    </code></pre>
+
+    <b>Note:</b><br/>
+    1) "/swagger.json" is the route which is responsible to generate swagger spec from the route file based on the
+            rules specified for each route.<br/>
+    2) "/docs/*file" is the route responsible for rendering the swagger-ui.<br/>
+    <br/>
+
+    For any issue please raise a ticket @ <a
+        href="https://github.com/SangeetaGulia/play-swagger-activator-template/issues">Github Issue</a>
+
+</div>
+
+</body>
+
+</html>
