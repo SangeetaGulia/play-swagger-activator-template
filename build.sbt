@@ -1,4 +1,4 @@
-name := """testswagger"""
+name := """play-swagger-activator-template"""
 
 version := "1.0-SNAPSHOT"
 

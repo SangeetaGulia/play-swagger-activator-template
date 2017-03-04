@@ -16,3 +16,7 @@ target/
 .classpath
 metastore_db/
 derby.log
+project/target
+project/.sbtserver
+logs/application.log
+.sbtserver
